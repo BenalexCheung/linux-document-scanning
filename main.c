@@ -4,7 +4,7 @@ int main()
 {
     // 1. initialize SANE
     printf("Init\n");
-    init();
+    init_scanner();
 
     do 
     {
@@ -43,6 +43,6 @@ int main()
 
     // 6. release resources
     printf("Exit\n");
-    exit();
+    exit_scanner();
     return 0;
 }

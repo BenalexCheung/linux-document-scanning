@@ -1,8 +1,9 @@
 #include <assert.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <signal.h>
 
-#include "sane/sanei.h"
+#include "sane/sane.h"
 #include "sane/saneopts.h"
 
 #ifndef PATH_MAX
@@ -14,7 +15,7 @@ extern "C" {
 #endif
 
 // Initialize SANE
-void init();
+void init_scanner();
 // Get all devices
 SANE_Status get_devices(const SANE_Device ***device_list);
 // Open a device
@@ -26,7 +27,7 @@ void cancle_scan(SANE_Handle sane_handle);
 // Close SANE device
 void close_device(SANE_Handle sane_handle);
 // Release SANE resources
-void exit();
+void exit_scanner();
 
 #ifdef __cplusplus
 }
